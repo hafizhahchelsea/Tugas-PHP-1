@@ -65,21 +65,60 @@ foreach ($jadwal as $waktu => $kegiatan) {
 }
 echo "</table>";
 
-$jam = strtotime("19:10");
+$jam = ("15:30");
 $ada_tugas = false;
-if ($jam >= strtotime("19:10") && $jam < strtotime("21:10")) {
-    echo "<br>Jam " . date("H:i", $jam) . " = ";
-    echo $ada_tugas ? "Mengerjakan tugas" : "Waktu luang karena tidak ada tugas";
-} elseif ($jam >= strtotime("21:10") && $jam < strtotime("21:40")) {
-    echo "<br>Jam " . date("H:i", $jam) . " = Mengobrol dengan keluarga";
-} elseif ($jam >= strtotime("21:40") && $jam < strtotime("21:55")) {
-    echo "<br>Jam " . date("H:i", $jam) . " = Waktu luang";
-} elseif ($jam >= strtotime("21:55") && $jam < strtotime("22:00")) {
-    echo "<br>Jam " . date("H:i", $jam) . " = Persiapan tidur";
-} elseif ($jam >= strtotime("22:00") && $jam < strtotime("04:00")) {
-    echo "<br>Jam " . date("H:i", $jam) . " = Tidur";
+if ($jam >= ("15:30") && $jam <= ("16:00")) {
+    echo "jam $jam = Tiba di rumah dan mandi";
+} elseif ($jam >= ("16:00 ") && $jam <= ("16:30")) {
+    echo "jam $jam = Mengaji";
+} elseif ($jam >= ("16:30") && $jam <= ("17:00")) {
+    echo "jam $jam = Menghafal dialog festival";
+} elseif ($jam >= ("17:00") && $jam <= ("17:15")) {
+    echo "jam $jam = membantu ibu membeli bumbu";
+} elseif ($jam >= ("17:15") && $jam <= ("18:45")) {
+    echo "jam $jam = chatting dengan Raya (arab)";
+} elseif ($jam >= ("17:45") && $jam <= ("18:10")) {
+    echo "jam $jam = sholat magrib";
+} elseif ($jam >= ("18:10") && $jam <= ("18:50")) {
+    echo "jam $jam = Makan malam";
+} elseif ($jam >= ("18:50") && $jam <= ("19.10")) {
+    echo "jam $jam = sholat isya";
+} elseif ($jam >= ("19:10") && $jam <= ("21:10")) {
+    echo "jam $jam = mengerjakan tugas";
+    if ($ada_tugas) {
+        echo "<br>Jam $jam, Andi sedang mengerjakan tugas.";
+    } else {
+        echo "<br>Jam $jam, Andi tidak punya tugas sekolah, jadi Andi memiliki waktu luang.";
+    }
+} elseif ($jam >= ("21:10") && $jam <= ("21:40")) {
+    echo "jam $jam = mengobrol bersama keluarga";
+    if ($ada_tugas) {
+        echo "<br>Jam $jam, Andi mengobrol dengan keluarga";
+    } else {
+        echo "<br>Jam $jam, Andi membantu orang tua atau bersantai.";
+    }
+} elseif ($jam >= ("21:40") && $jam <= ("21:55")) {
+    echo "jam $jam = waktu luang";
+} elseif ($jam >= ("21:55") && $jam <= ("22:00")) {
+    echo "jam $jam = persiapan tidur";
+} elseif ($jam >= ("22:00") && $jam <= ("04:00")) {
+    echo "jam $jam = tidur ";
+} elseif ($jam >= ("04:00") && $jam <= ("04:30")) {
+    echo "jam $jam = sholat subuh";
+} elseif ($jam >= ("04:30") && $jam <= ("04:45")) {
+    echo "jam $jam = membersihlkan tempat tidur";
+} elseif ($jam >= ("04:45") && $jam <= ("05:15")) {
+    echo "jam $jam = mandi";
+} elseif ($jam >= ("05:15") && $jam <= ("05:45")) {
+    echo "jam $jam = sarapan";
+} elseif ($jam >= ("05:45") && $jam <= ("06:00")) {
+    echo "jam $jam = menata jadwal";
+} elseif ($jam >= ("06:00") && $jam <= ("06:15")) {
+    echo "jam $jam = berangakat sekolah";
+} elseif ($jam >= ("06:15") && $jam <= ("15:30")) {
+    echo "jam $jam = bersekolah";
 } else {
-    echo "<br>Jam " . date("H:i", $jam) . " = Tidak ada jadwal";
+    echo "jam $jam = Andi kesel lek";
 }
 
 ?>
